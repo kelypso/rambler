@@ -1,5 +1,5 @@
 class Api::V1::EntriesController < ApplicationController
-    before_action :set_entry, only: [:show, :update, :destroy]
+    before_action :set_entry, only: [:show, :update, :destroy] #, :authenticate_user!
 
     # GET /entries
     def index
@@ -20,8 +20,7 @@ class Api::V1::EntriesController < ApplicationController
 
     # Only allow a trusted parameter "white list" through.
     def entry_params
-        params.require(:entry).permit(:date, :location, :meals, :activities, :encounters, 
-                                    :lowlight, :delight, :highlight, :objectives, :photo)
+        params.require(:entry).permit(:date, :location, :meals, :activities, :encounters, :lowlight, :delight, :highlight, :objectives, :photo)
     end
 
 end
