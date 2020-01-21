@@ -3,12 +3,6 @@ import logo from './logo.svg';
 import './App.css';
 
 class App extends React.Component {
-  componentDidMount() {
-    fetch('http://localhost:3000/api/v1/users/1/trips/1/entries')
-      .then(resp => resp.json())
-      .then(console.log)
-  }
-
   render() {
     return (
       <div className="App">
