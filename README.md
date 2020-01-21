@@ -6,13 +6,15 @@ Rambler is a React app built for reflective travel journaling. Log insightful en
 
 • Clone this repo and run `bundle install` to install all application dependencies.
 
+• From the client directory, run `npm install` to install all node packages.
+
 ## Usage
 
-• Once the repo is cloned and dependencies installed, launch the server by running `rails s`.
+• Once the repo is cloned and dependencies and packages installed, launch the server from the main directory by running `rails s`.
 
-• Next, launch the application in your browser.
+• From the client directory, launch the application in your browser by running `npm start`.
 
-• Create an account to begin your ramblings!
+• Create an account and begin rambling.
 
 ## Contributing
 
