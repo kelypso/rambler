@@ -4,6 +4,7 @@ class CreateTrips < ActiveRecord::Migration[6.0]
       t.string :name
       t.string :category
       t.string :duration
+      t.integer "user_id", null: false
 
       t.timestamps
     end
