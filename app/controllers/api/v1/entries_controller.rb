@@ -1,4 +1,5 @@
 class Api::V1::EntriesController < ApplicationController
+    before_action :set_entry, only: [:show, :update, :destroy]
 
     # GET /entries
     def index

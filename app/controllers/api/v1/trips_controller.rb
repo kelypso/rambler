@@ -1,4 +1,5 @@
 class Api::V1::TripsController < ApplicationController
+    before_action :set_trip, only: [:show, :update, :destroy]
 
     # GET /trips
     def index
