@@ -8,9 +8,9 @@ class Api::V1::UsersController < ApplicationController
   end
 
   # GET /users/1
-  # def show
-  #   render json: @user
-  # end
+  def show
+    render json: @user
+  end
 
   # POST /users
   def create
