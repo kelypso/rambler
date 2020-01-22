@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
-  
   namespace :api do
     namespace :v1 do
+      get "/login", to: "sessions#create"
       resources :users do
         resources :trips do 
           resources :entries 
