@@ -37,8 +37,24 @@
   }
 }
 
+/* body {
+  background: #ffffff;
+} */
+
 .NavBar {
   display: flex;
   flex-direction: row;
-  color: grey
+  color: #636363;
+}
+
+.TripCard {
+  float: left;
+  width: 200px;
+  height: 170px;
+  margin: 5px;
+  border-radius: 8px;
+  position: relative;
+  top: 70px;
+  background: #fcf4e8;
+  color: #636363;
 }
