@@ -2,7 +2,7 @@ import React from 'react';
 import './App.css';
 import Login from './components/Login.js';
 import {connect} from 'react-redux';
-import {getCurrentUser} from './actions/user.js'
+import {getCurrentUser} from './actions/user.js';
 
 class App extends React.Component {
   
