@@ -16,11 +16,11 @@ gem 'puma', '~> 4.1'
 # Use Active Model has_secure_password
 gem 'bcrypt', '~> 3.1.7'
 # Use to allow API to return data in JSON for frontend use
-gem 'active_model_serializers'
+# gem 'active_model_serializers'
+gem 'fast_jsonapi'
 
-gem 'devise-jwt'
 gem 'dotenv-rails', groups: [:development, :test]
-gem 'rspec-rails', groups: [:development, :test]
+gem 'rspec-rails', '~> 4.0.0.beta2', groups: [:development, :test]
 gem 'database_cleaner'
 
 # Use Active Storage variant

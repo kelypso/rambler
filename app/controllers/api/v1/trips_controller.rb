@@ -9,7 +9,9 @@ class Api::V1::TripsController < ApplicationController
 
     # GET /trips/1
     def show
-        render json: TripSerializer.new(@trip).to_serialized_json
+        trip_json = TripSerializer.new(@trip).serialized_json
+        render json: trip_json
+        #render json: TripSerializer.new(@trip).to_serialized_json
     end
 
     private
