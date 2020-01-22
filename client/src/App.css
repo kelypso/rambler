@@ -44,7 +44,10 @@
 .NavBar {
   display: flex;
   flex-direction: row;
+  padding: 10px;
   color: #636363;
+  height: 22px;
+  background: lightgrey;
 }
 
 .TripCard {
