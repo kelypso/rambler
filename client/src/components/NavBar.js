@@ -6,7 +6,7 @@ import Logout from './Logout.js';
 const NavBar = ({user}) => {
     return (
         <div className="NavBar">
-            {user ? <strong>Welcome, {user.data.attributes.name}</strong> : <strong>Welcome to Rambler</strong>}
+            {user ? <strong>Welcome, {user.attributes.name}</strong> : <strong>Welcome to Rambler</strong>}
             {user ? <Logout /> : <Login />}
         </div>
     )
