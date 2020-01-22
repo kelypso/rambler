@@ -4,14 +4,13 @@ class Api::V1::EntriesController < ApplicationController
     # GET /entries
     def index
         @entries = Entry.all
-        render json: EntrySerializer.new(@entries).to_serialized_json
+        render json: @entries
     end
 
     # GET /entries/1
     def show
         entry_json = EntrySerializer.new(@entry).serialized_json
         render json: entry_json
-        #render json: EntrySerializer.new(@entry).to_serialized_json
     end
 
     private

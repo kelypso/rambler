@@ -4,14 +4,13 @@ class Api::V1::TripsController < ApplicationController
     # GET /trips
     def index
         @trips = Trip.all
-        render json: TripSerializer.new(@trips).to_serialized_json
+        render json: @trips
     end
 
     # GET /trips/1
     def show
         trip_json = TripSerializer.new(@trip).serialized_json
         render json: trip_json
-        #render json: TripSerializer.new(@trip).to_serialized_json
     end
 
     private

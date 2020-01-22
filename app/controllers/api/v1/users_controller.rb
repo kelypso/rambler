@@ -5,14 +5,12 @@ class Api::V1::UsersController < ApplicationController
   def index
     @users = User.all
     render json: @users
-    #render json: UserSerializer.new(@users).to_serialized_json
   end
 
   # GET /users/1
   def show
     user_json = UserSerializer.new(@user).serialized_json
     render json: user_json
-    #render json: UserSerializer.new(@user).to_serialized_json
   end
 
   # POST /users
