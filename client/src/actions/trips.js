@@ -21,7 +21,7 @@ export const getUserTrips = () => {
             if (response.error) {
                 alert(response.error)
             } else {
-                dispatch(setUserTrips([]))
+                dispatch(setUserTrips(response.data))
             }
         })
         .catch(console.log)
