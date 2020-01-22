@@ -1,7 +1,7 @@
 import React from 'react'
 import {connect} from 'react-redux'
 import {updateSignupForm} from '../actions/signupForm.js'
-// import {signup} from '../actions/user.js'
+import {signup} from '../actions/user.js'
 
 const Signup = ({signupData, updateSignupForm, signup}) => {
 
@@ -16,7 +16,7 @@ const Signup = ({signupData, updateSignupForm, signup}) => {
 
     const handleSubmit = e => {
         e.preventDefault()
-        // signup(signupData)
+        signup(signupData)
     }
 
     return (
@@ -36,4 +36,4 @@ const mapStateToProps = state => {
     }
 }
 
-export default connect(mapStateToProps, {updateSignupForm})(Signup)
+export default connect(mapStateToProps, {updateSignupForm, signup})(Signup)
