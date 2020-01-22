@@ -1,8 +1,8 @@
 class UserSerializer
   include FastJsonapi::ObjectSerializer
-  attributes :name, :email, :username #, :trips, :entries
-  #has_many :trips, serializer: TripSerializer
-  #has_many :entries, serializer: EntrySerializer
+  attributes :name, :email, :username
+  # has_many :trips, serializer: TripSerializer
+  # has_many :entries, serializer: EntrySerializer
 
   attribute :trips do |user|
     user.trips.map do |trip|
