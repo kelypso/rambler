@@ -1,10 +1,16 @@
 class Api::V1::TripsController < ApplicationController
-    before_action :set_trip, only: [:show, :update, :destroy] #, :authenticate_user!
+    before_action :set_trip, only: [:show, :update, :destroy]
 
     # GET /trips
     def index
-        @trips = Trip.all
-        render json: @trips
+        if logged_in?
+            @trips = current_user.trips
+            render json: @trips
+        else 
+            render json: {
+                error: "Must be logged in to view trips"
+            }
+        end
     end
 
     # GET /trips/1
