@@ -5,7 +5,7 @@ class Api::V1::TripsController < ApplicationController
     def index
         if logged_in?
             @trips = current_user.trips
-            render json: @trips
+            render json: TripSerializer.new(@trips)
         else 
             render json: {
                 error: "Must be logged in to view trips"
