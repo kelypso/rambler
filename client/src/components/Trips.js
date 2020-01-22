@@ -3,9 +3,9 @@ import {connect} from 'react-redux'
 import TripCard from './TripCard.js'
 
 const Trips = ({trips}) => {
-    const tripCards = trips.map(t => <TripCard trip={t} key={t.id} />)
+    const tripCards = trips.length > 0 ? trips.map(t => <TripCard trip={t} key={t.id} />) : null
     return (
-        tripCards.length > 0 ? tripCards : null 
+        tripCards
     )
 }
 
