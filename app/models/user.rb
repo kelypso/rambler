@@ -4,7 +4,5 @@ class User < ApplicationRecord
     has_many :trips, dependent: :destroy
     has_many :entries, through: :trips
 
-    validates :name, presence: true
-    validates :email, presence: true
-    validates :username, presence: true
+    validates :name, :email, :username, presence: true
 end

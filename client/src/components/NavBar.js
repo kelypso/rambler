@@ -8,7 +8,7 @@ const NavBar = ({user}) => {
         <div className="NavBar">
             {user ? <strong>Welcome, {user.attributes.name}</strong> : <strong>Welcome to Rambler</strong>}
             <button>Login</button>
-            <button>Signup</button>
+            <button>Sign Up</button>
         </div>
     )
 }
