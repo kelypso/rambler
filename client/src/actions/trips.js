@@ -1,3 +1,5 @@
+import {resetTripForm} from './newTripForm'
+
 // Synchronous action creators 
 export const setUserTrips = trips => {
     return {
@@ -9,6 +11,13 @@ export const setUserTrips = trips => {
 export const clearTrips = () => {
     return {
         type: "CLEAR_TRIPS"
+    }
+}
+
+export const addTrip = trip => {
+    return {
+        type: "ADD_TRIP",
+        trip
     }
 }
 
@@ -31,5 +40,35 @@ export const getUserTrips = () => {
             }
         })
         .catch(console.log)
+    }
+}
+
+export const createTrip = (tripData, history) => {
+    return dispatch => {
+        const tripBody = {
+            name: tripData.name,
+            category: tripData.category,
+            duration: tripData.duration,
+            user_id: tripData.userId
+        }
+        return fetch("http://localhost:3001/api/v1/trips", {
+            credentials: "include",
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify(tripBody)
+        })
+            .then(resp => resp.json())
+            .then(response => {
+                if (response.error) {
+                    alert(response.error)
+                } else {
+                    dispatch(addTrip(response.data))
+                    dispatch(resetTripForm())
+                    history.push(`/trips/${response.data.id}`)
+                }
+            })
+            .catch(console.log)
     }
 }

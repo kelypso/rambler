@@ -1,9 +1,9 @@
 import React from 'react'
 import {connect} from 'react-redux'
 import {updateNewTripForm} from '../actions/newTripForm.js'
-// import {addTrip} from '../actions/user.js'
+import {createTrip} from '../actions/trips.js'
 
-const NewTrip = ({tripData, updateNewTripForm, addTrip, history}) => {
+const NewTrip = ({tripData, updateNewTripForm, createTrip, history}) => {
     const {name, category, duration} = tripData
 
     const handleChange = e => {
@@ -13,7 +13,7 @@ const NewTrip = ({tripData, updateNewTripForm, addTrip, history}) => {
 
     const handleSubmit = e => {
         e.preventDefault()
-        //addTrip(tripData, history)
+        createTrip(tripData, history)
     }
 
     return (
@@ -34,4 +34,4 @@ const mapStateToProps = state => {
     }
 }
 
-export default connect(mapStateToProps, {updateNewTripForm})(NewTrip)
+export default connect(mapStateToProps, {updateNewTripForm, createTrip})(NewTrip)

@@ -19,6 +19,16 @@ class Api::V1::TripsController < ApplicationController
         render json: trip_json
     end
 
+    #POST /trips 
+    def create
+        @trip = Trip.new(trip_params)
+        if @trip.save 
+            render json: @trip, status: :created
+        else
+            render json: @trip.errors, status: :unprocessable_entity
+        end
+    end
+
     private
     # Use callbacks to share common setup or constraints between actions.
     def set_trip
