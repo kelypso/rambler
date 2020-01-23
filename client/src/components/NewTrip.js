@@ -16,7 +16,7 @@ const NewTrip = ({tripData, userId, updateNewTripForm, createTrip, history}) => 
         createTrip({
             ...tripData, 
             userId
-        }, history)
+        })
     }
 
     return (
@@ -32,9 +32,10 @@ const NewTrip = ({tripData, userId, updateNewTripForm, createTrip, history}) => 
 }
 
 const mapStateToProps = state => {
+    const userId = state.user ? state.user.id : ""
     return {
         tripData: state.newTripForm,
-        userId: state.user.id
+        userId
     }
 }
 

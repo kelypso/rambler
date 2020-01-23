@@ -43,7 +43,7 @@ export const getUserTrips = () => {
     }
 }
 
-export const createTrip = (tripData, history) => {
+export const createTrip = (tripData) => {
     return dispatch => {
         const tripBody = {
             trip: {
@@ -68,7 +68,6 @@ export const createTrip = (tripData, history) => {
                 } else {
                     dispatch(addTrip(response.data))
                     dispatch(resetTripForm())
-                    history.push(`/trips/${response.data.id}`)
                 }
             })
             .catch(console.log)
