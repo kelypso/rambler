@@ -1,6 +1,5 @@
 import React from 'react'
 import {connect} from 'react-redux'
-import Login from './Login.js';
 import Logout from './Logout.js';
 
 const NavBar = ({user}) => {
@@ -8,8 +7,6 @@ const NavBar = ({user}) => {
         <div className="NavBar">
             {user ? <strong>Welcome, {user.attributes.name}</strong> : <strong>Welcome to Rambler</strong>}
             <Logout />
-            <button>Login</button>
-            <button>Sign Up</button>
         </div>
     )
 }

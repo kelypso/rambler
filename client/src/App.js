@@ -3,6 +3,7 @@ import './App.css';
 import {connect} from 'react-redux';
 import {getCurrentUser} from './actions/user.js';
 import NavBar from './components/NavBar.js';
+import Home from './components/Home.js';
 import Login from './components/Login.js';
 import Signup from './components/Signup.js';
 import Trips from './components/Trips.js';
@@ -16,11 +17,13 @@ class App extends React.Component {
   }
   
   render() {
+    const {loggedIn} = this.props
     return (
       <Router>
         <div className="App">
           <NavBar />
           <MainContainer />
+          <Route exact path='/' render={() => loggedIn? <Trips /> : <Home />} />
           <Route exact path='/login' component={Login} />
           <Route exact path='/signup' component={Signup} />
           <Route exact path='/trips' component={Trips} />
@@ -30,4 +33,10 @@ class App extends React.Component {
   }
 }
 
-export default connect(null, {getCurrentUser})(App)
+const mapStateToProps = state => {
+  return ({
+    loggedIn: !!state.user
+  })
+}
+
+export default connect(mapStateToProps, {getCurrentUser})(App)
