@@ -8,7 +8,7 @@ import Login from './components/Login.js'
 import Signup from './components/Signup.js'
 import Trips from './components/Trips.js'
 import NewTrip from './components/NewTrip.js'
-import {BrowserRouter as Router, Route} from 'react-router-dom'
+import {Route, Switch, withRouter} from 'react-router-dom'
 
 class App extends React.Component {
   
@@ -19,16 +19,16 @@ class App extends React.Component {
   render() {
     const {loggedIn} = this.props
     return (
-      <Router>
-        <div className="App">
-          {loggedIn ? <NavBar /> : <Home />}
-          {/* <Route exact path='/' render={() => loggedIn? <Trips /> : <Home />} /> */}
+      <div className="App">
+        {loggedIn ? <NavBar /> : <Home />}
+        {/* <Route exact path='/' render={() => loggedIn? <Trips /> : <Home />} /> */}
+        <Switch>
           <Route exact path='/login' component={Login} />
           <Route exact path='/signup' component={Signup} />
           <Route exact path='/trips' component={Trips} />
           <Route exact path='/trips/new' component={NewTrip} />
-        </div>
-      </Router>
+        </Switch>
+      </div>
     );
   }
 }
@@ -39,4 +39,4 @@ const mapStateToProps = state => {
   })
 }
 
-export default connect(mapStateToProps, {getCurrentUser})(App)
+export default withRouter(connect(mapStateToProps, {getCurrentUser})(App))
