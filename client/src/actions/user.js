@@ -1,6 +1,6 @@
 import {resetLoginForm} from './loginForm.js'
 import {resetSignupForm} from './signupForm.js'
-import {getUserTrips} from './trips.js'
+import {getUserTrips, clearTrips} from './trips.js'
 
 // Synchronous action creators 
 export const setCurrentUser = user => {
@@ -73,6 +73,7 @@ export const signup = (credentials, history) => {
 export const logout = () => {
   return dispatch => {
     dispatch(clearCurrentUser())
+    dispatch(clearTrips())
     return fetch("http://localhost:3001/api/v1/logout", {
       credentials: "include",
       method: "DELETE"

@@ -6,6 +6,12 @@ export const setUserTrips = trips => {
     }
 }
 
+export const clearTrips = () => {
+    return {
+        type: "CLEAR_TRIPS"
+    }
+}
+
 // Asynch action creators
 export const getUserTrips = () => {
     return dispatch => {
