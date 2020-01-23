@@ -15,7 +15,7 @@ class Api::V1::EntriesController < ApplicationController
 
     # GET /entries/1
     def show
-        entry_json = EntrySerializer.new(@entry).serialized_json
+        entry_json = EntrySerializer.new(@entry)
         render json: entry_json
     end
 
