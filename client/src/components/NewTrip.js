@@ -1,17 +1,17 @@
 import React from 'react'
 import {connect} from 'react-redux'
-//import {updateTripForm} from '../actions/newTripForm.js'
+//import {updateNewTripForm} from '../actions/newTripForm.js'
 // import {addTrip} from '../actions/user.js'
 
-const NewTrip = ({tripData, updateTripForm, addTrip, history}) => {
+const NewTrip = ({tripData, updateNewTripForm, addTrip, history}) => {
 
-    const handleChange = () => {
-        // const {name, value} = e.target
-        // const updatedForm = {
-        //     ...tripData,
-        //     [name]: value
-        // }
-        // updateTripForm(updatedForm)
+    const handleChange = e => {
+        const {name, value} = e.target
+        const updatedForm = {
+            ...tripData,
+            [name]: value
+        }
+        updateNewTripForm(updatedForm)
     }
 
     // const handleSubmit = e => {

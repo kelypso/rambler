@@ -1,8 +1,8 @@
 // Synchronous action creators 
-export const updateNewTripForm = formData => {
+export const updateNewTripForm = (name, value) => {
     return {
         type: "UPDATE_NEW_TRIP_FORM",
-        formData
+        formData: {name, value}
     }
 }
  
