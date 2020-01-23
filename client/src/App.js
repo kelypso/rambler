@@ -7,9 +7,9 @@ import Home from './components/Home.js'
 import Login from './components/Login.js'
 import Signup from './components/Signup.js'
 import Trips from './components/Trips.js'
-import NewTrip from './components/NewTrip.js'
+import TripForm from './components/TripForm.js'
 import TripCard from './components/TripCard.js' // Update with trip page???
-import NewTripForm from './components/NewTrip.js'
+//import NewTripForm from './components/TripForm.js'
 import {Route, Switch, withRouter} from 'react-router-dom'
 
 class App extends React.Component {
@@ -28,7 +28,7 @@ class App extends React.Component {
           <Route exact path='/login' component={Login} />
           <Route exact path='/signup' component={Signup} />
           <Route exact path='/trips' component={Trips} />
-          <Route exact path='/trips/new' component={NewTrip} />
+          <Route exact path='/trips/new' component={TripForm} />
           <Route exact path='/trips/:id' render={props => { // Update with trip page???
               const trip = trips.find(t => t.id === props.match.params.id)
               return <TripCard trip={trip} {...props} />
@@ -36,7 +36,7 @@ class App extends React.Component {
           } />
           <Route exact path='/trips/:id/edit' render={props => {
               const trip = trips.find(t => t.id === props.match.params.id)
-              return <NewTripForm trip={trip} {...props} />
+              return <TripForm trip={trip} {...props} /> // NewTripForm
             }
           } />
         </Switch>

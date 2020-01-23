@@ -1,14 +1,14 @@
 import React from 'react'
 import {connect} from 'react-redux'
-import {updateNewTripForm} from '../actions/newTripForm.js'
+import {updateTripForm} from '../actions/tripForm.js'
 import {createTrip} from '../actions/trips.js'
 
-const NewTrip = ({tripData, userId, updateNewTripForm, createTrip, history}) => {
+const TripForm = ({tripData, userId, updateTripForm, createTrip, history}) => {
     const {name, category, duration} = tripData
 
     const handleChange = e => {
         const {name, value} = e.target
-        updateNewTripForm(name, value)
+        updateTripForm(name, value)
     }
 
     const handleSubmit = e => {
@@ -20,7 +20,7 @@ const NewTrip = ({tripData, userId, updateNewTripForm, createTrip, history}) => 
     }
 
     return (
-        <div className="NewTrip">
+        <div className="TripForm">
             <form onSubmit={handleSubmit}>
                 <input type="text" name="name" onChange={handleChange} value={name} placeholder="name" /><br />
                 <input type="text" name="category" onChange={handleChange} value={category} placeholder="category" /><br />
@@ -34,9 +34,9 @@ const NewTrip = ({tripData, userId, updateNewTripForm, createTrip, history}) => 
 const mapStateToProps = state => {
     const userId = state.user ? state.user.id : ""
     return {
-        tripData: state.newTripForm,
+        tripData: state.tripForm,
         userId
     }
 }
 
-export default connect(mapStateToProps, {updateNewTripForm, createTrip})(NewTrip)
+export default connect(mapStateToProps, {updateTripForm, createTrip})(TripForm)
