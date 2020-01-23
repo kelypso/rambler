@@ -3,8 +3,8 @@ import thunk from 'redux-thunk'
 import user from './reducers/user.js'
 import loginForm from './reducers/loginForm.js'
 import signupForm from './reducers/signupForm.js'
-import trips from './reducers/trips.js'
 import newTripForm from './reducers/newTripForm.js'
+import trips from './reducers/trips.js'
 
 const reducer = combineReducers({
     user,
