@@ -41,7 +41,24 @@
   background: #fcf4e8;
 } */
 
-.NavBar {
+/* .NavBar {
+  display: flex;
+  flex-direction: row;
+  padding: 10px;
+  color: #636363;
+  height: 22px;
+  background: lightgrey;
+} */
+
+h2 {
+  color: #636363;
+}
+
+a.active {
+  color: teal;
+}
+
+.navLinks {
   display: flex;
   flex-direction: row;
   padding: 10px;
@@ -50,18 +67,9 @@
   background: lightgrey;
 }
 
-a.active {
-  color: teal;
-}
-
-.navLinks {
-  position: relative;
-  left: 100px;
-}
-
 .logout {
   position: relative;
-  left: 200px;
+  left: 300px;
 }
 
 .TripCard {
@@ -72,6 +80,6 @@ a.active {
   border-radius: 8px;
   border: solid 3px #636363;
   position: relative;
-  top: 70px;
+  top: 40px;
   color: #636363;
 }
