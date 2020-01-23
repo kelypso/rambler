@@ -1,4 +1,4 @@
-import {resetTripForm} from './TripForm.js'
+import {resetTripForm} from './tripForm.js'
 
 // Synchronous action creators 
 export const setUserTrips = trips => {
