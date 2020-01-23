@@ -1,12 +1,8 @@
 class TripSerializer
   include FastJsonapi::ObjectSerializer
-  attributes :name, :category
+  attributes :name, :category, :duration
   # has_one :user, serializer: UserSerializer
   # has_many :entries, serializer: EntrySerializer
-
-  attribute :duration do |trip|
-    "#{trip.duration.split(/, /).join(" - ")}"
-  end
 
   attribute :entries do |trip|
     trip.entries.map do |entry|

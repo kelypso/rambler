@@ -12,9 +12,9 @@ DatabaseCleaner.clean_with(:truncation)
 roamer = User.create(name: "Conrad", email: "roamer@email.com", username: "roamer", password: "roamer")
 scout = User.create(name: "Lacey", email: "scout@email.com", username: "scout", password: "scout")
 
-trip_a = Trip.create(name: "Spain", category: "International", duration: "4/12/2018, 4/24/2018", user_id: "1")
-trip_b = Trip.create(name: "Bishop", category: "Camping", duration: "11/10/2018, 11/14/2018", user_id: "2")
-trip_c = Trip.create(name: "Thailand", category: "International", duration: "10/27/2019, 11/4/2019", user_id: "2")
+trip_a = Trip.create(name: "Spain", category: "International", duration: "4/12/2018 - 4/24/2018", user_id: "1")
+trip_b = Trip.create(name: "Bishop", category: "Camping", duration: "11/10/2018 - 11/14/2018", user_id: "2")
+trip_c = Trip.create(name: "Thailand", category: "International", duration: "10/27/2019 - 11/4/2019", user_id: "2")
 
 entry_a = Entry.create(date: "4/13/2018", location: "Barcelona, Spain", 
                         meals: "croissant with cafe au lait, veggie sandwich, patatas bravas", activities: "toured La Sagrada Familia, climbed at Sharma BCN", encounters: "", 
