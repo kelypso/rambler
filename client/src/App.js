@@ -5,7 +5,6 @@ import {getCurrentUser} from './actions/user.js'
 import NavBar from './components/NavBar.js'
 import Home from './components/Home.js'
 import Login from './components/Login.js'
-import Logout from './components/Logout.js'
 import Signup from './components/Signup.js'
 import Trips from './components/Trips.js'
 import NewTrip from './components/NewTrip.js'
@@ -22,7 +21,6 @@ class App extends React.Component {
     return (
       <Router>
         <div className="App">
-          {loggedIn ? <Logout /> : null}
           <NavBar />
           <Route exact path='/' render={() => loggedIn? <Trips /> : <Home />} />
           <Route exact path='/login' component={Login} />

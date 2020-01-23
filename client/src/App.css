@@ -50,6 +50,10 @@
   background: lightgrey;
 }
 
+a.active {
+  color: teal;
+}
+
 .TripCard {
   float: left;
   width: 200px;
