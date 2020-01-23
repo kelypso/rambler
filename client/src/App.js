@@ -8,6 +8,7 @@ import Login from './components/Login.js'
 import Logout from './components/Logout.js'
 import Signup from './components/Signup.js'
 import Trips from './components/Trips.js'
+import NewTrip from './components/NewTrip.js'
 import {BrowserRouter as Router, Route} from 'react-router-dom'
 
 class App extends React.Component {
