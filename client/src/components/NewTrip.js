@@ -6,32 +6,31 @@ import {updateNewTripForm} from '../actions/newTripForm.js'
 const NewTrip = ({tripData, updateNewTripForm, addTrip, history}) => {
 
     const handleChange = e => {
-        e.preventDefault()
         const {name, value} = e.target
         updateNewTripForm(name, value)
     }
 
-    // const handleSubmit = e => {
-    //     e.preventDefault()
-    //     addTrip(tripData, history)
-    // }
+    const handleSubmit = e => {
+        e.preventDefault()
+        //addTrip(tripData, history)
+    }
 
     return (
         <div className="NewTrip">
-            <form>
-                <input type="text" name="name" onChange={handleChange} placeholder="name" /><br />
-                <input type="text" name="category" onChange={handleChange} placeholder="category" /><br />
-                <input type="text" name="duration" onChange={handleChange} placeholder="start date - end date" /><br />
+            <form onSubmit={handleSubmit}>
+                <input type="text" name="name" onChange={handleChange} value={tripData.name} placeholder="name" /><br />
+                <input type="text" name="category" onChange={handleChange} value={tripData.category} placeholder="category" /><br />
+                <input type="text" name="duration" onChange={handleChange} value={tripData.duration} placeholder="start date - end date" /><br />
             <input type="submit" value="Add Trip" />
         </form>
         </div>
     )
 }
 
-// const mapStateToProps = state => {
-//     return {
-//         tripData: state.tripForm
-//     }
-// }
+const mapStateToProps = state => {
+    return {
+        tripData: state.newTripForm
+    }
+}
 
-export default connect(null, {updateNewTripForm})(NewTrip)
+export default connect(mapStateToProps, {updateNewTripForm})(NewTrip)
