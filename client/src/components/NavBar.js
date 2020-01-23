@@ -8,8 +8,8 @@ const NavBar = ({user, loggedIn}) => {
         <div className="NavBar">
             {user ? <strong>Welcome, {user.attributes.name}</strong> : <strong>Welcome to Rambler</strong>}
             <span className="navLinks">
-                <NavLink exact activeClass to="/trips">  |  Trips  |  </NavLink>
-                <NavLink exact activeClass to="/trips/new">New Trip  |  </NavLink>
+                <NavLink exact activeClassName="active" to="/trips">  |  Trips  |  </NavLink>
+                <NavLink exact activeClassName="active" to="/trips/new">New Trip  |  </NavLink>
             </span>
             <span className="logout">{loggedIn ? <Logout /> : null}</span>
             
