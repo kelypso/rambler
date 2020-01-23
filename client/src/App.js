@@ -8,6 +8,7 @@ import Login from './components/Login.js'
 import Signup from './components/Signup.js'
 import Trips from './components/Trips.js'
 import NewTrip from './components/NewTrip.js'
+import TripCard from './components/TripCard.js' // Update with trip page???
 import {Route, Switch, withRouter} from 'react-router-dom'
 
 class App extends React.Component {
@@ -17,7 +18,7 @@ class App extends React.Component {
   }
   
   render() {
-    const {loggedIn} = this.props
+    const {loggedIn, trips} = this.props
     return (
       <div className="App">
         {loggedIn ? <NavBar /> : <Home />}
@@ -27,6 +28,11 @@ class App extends React.Component {
           <Route exact path='/signup' component={Signup} />
           <Route exact path='/trips' component={Trips} />
           <Route exact path='/trips/new' component={NewTrip} />
+          <Route exact path='/trips/:id' render={props => { // Update with trip page???
+              const trip = trips.find(t => t.id === props.match.params.id)
+              return <TripCard trip={trip} {...props} />
+            }
+          } />
         </Switch>
       </div>
     );
@@ -35,7 +41,8 @@ class App extends React.Component {
 
 const mapStateToProps = state => {
   return ({
-    loggedIn: !!state.user
+    loggedIn: !!state.user,
+    trips: state.trips
   })
 }
 
