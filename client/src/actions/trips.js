@@ -68,7 +68,7 @@ export const createTrip = (tripData, history) => {
                 } else {
                     dispatch(addTrip(response.data))
                     dispatch(resetTripForm())
-                    history.push("/trips") // update to trip show page with entries listed?
+                    history.push(`/trips/${response.data.id}`)
                 }
             })
             .catch(console.log)
