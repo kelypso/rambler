@@ -10,8 +10,8 @@ const reducer = combineReducers({
     user,
     loginForm,
     signupForm,
-    trips,
-    newTripForm
+    newTripForm,
+    trips
 })
 
 const composeEnhancer = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose
