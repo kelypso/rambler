@@ -54,6 +54,16 @@ a.active {
   color: teal;
 }
 
+.navLinks {
+  position: relative;
+  left: 100px;
+}
+
+.logout {
+  position: relative;
+  left: 200px;
+}
+
 .TripCard {
   float: left;
   width: 200px;
