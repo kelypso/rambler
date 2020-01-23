@@ -43,13 +43,16 @@ export const login = credentials => {
 
 export const signup = credentials => {
   return dispatch => {
+    const userData = {
+      user: credentials
+    }
     return fetch("http://localhost:3001/api/v1/signup", {
       credentials: "include",
       method: "POST",
       headers: {
         "Content-Type": "application/json"
       },
-      body: JSON.stringify(credentials)
+      body: JSON.stringify(userData)
     })
       .then(resp => resp.json())
       .then(response => {
@@ -57,7 +60,7 @@ export const signup = credentials => {
               alert(response.error)
           } else {
               dispatch(setCurrentUser(response.data))
-              // dispatch(getUserTrips())
+              dispatch(getUserTrips())
               dispatch(resetSignupForm())
           }
       })
