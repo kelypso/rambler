@@ -4,6 +4,7 @@ import {updateLoginForm} from '../actions/loginForm.js'
 import {login} from '../actions/user.js'
 
 const Login = ({loginData, updateLoginForm, login, history}) => {
+    const {username, password} = loginData
 
     const handleChange = e => {
         const {name, value} = e.target
@@ -17,8 +18,8 @@ const Login = ({loginData, updateLoginForm, login, history}) => {
 
     return (
         <form onSubmit={handleSubmit}>
-            <input type="text" name="username" onChange={handleChange} value={loginData.username} placeholder="username" /><br />
-            <input type="text" name="password" onChange={handleChange} value={loginData.password} placeholder="password" /><br />
+            <input type="text" name="username" onChange={handleChange} value={username} placeholder="username" /><br />
+            <input type="text" name="password" onChange={handleChange} value={password} placeholder="password" /><br />
             <input type="submit" value="Login" />
         </form>
     )
