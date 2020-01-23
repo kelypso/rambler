@@ -7,11 +7,7 @@ const Login = ({loginData, updateLoginForm, login, history}) => {
 
     const handleChange = e => {
         const {name, value} = e.target
-        const updatedForm = {
-            ...loginData,
-            [name]: value
-        }
-        updateLoginForm(updatedForm)
+        updateLoginForm(name, value)
     }
 
     const handleSubmit = e => {

@@ -1,8 +1,8 @@
 // Synchronous action creators 
-export const updateLoginForm = formData => {
+export const updateLoginForm = (name, value) => {
     return {
         type: "UPDATE_LOGIN_FORM",
-        formData
+        formData: {name, value}
     }
 }
 

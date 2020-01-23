@@ -7,12 +7,10 @@ const Signup = ({signupData, updateSignupForm, signup, history}) => {
 
     const handleChange = e => {
         const {name, value} = e.target
-        const updatedForm = {
-            ...signupData,
-            [name]: value
-        }
-        updateSignupForm(updatedForm)
+        updateSignupForm(name, value)
     }
+
+    
 
     const handleSubmit = e => {
         e.preventDefault()
