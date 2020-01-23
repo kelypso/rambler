@@ -3,7 +3,7 @@ import {connect} from 'react-redux'
 import {updateNewTripForm} from '../actions/newTripForm.js'
 import {createTrip} from '../actions/trips.js'
 
-const NewTrip = ({tripData, updateNewTripForm, createTrip, history}) => {
+const NewTrip = ({tripData, userId, updateNewTripForm, createTrip, history}) => {
     const {name, category, duration} = tripData
 
     const handleChange = e => {
@@ -13,7 +13,10 @@ const NewTrip = ({tripData, updateNewTripForm, createTrip, history}) => {
 
     const handleSubmit = e => {
         e.preventDefault()
-        createTrip(tripData, history)
+        createTrip({
+            ...tripData, 
+            userId
+        }, history)
     }
 
     return (
@@ -30,7 +33,8 @@ const NewTrip = ({tripData, updateNewTripForm, createTrip, history}) => {
 
 const mapStateToProps = state => {
     return {
-        tripData: state.newTripForm
+        tripData: state.newTripForm,
+        userId: state.user.id
     }
 }
 

@@ -46,10 +46,12 @@ export const getUserTrips = () => {
 export const createTrip = (tripData, history) => {
     return dispatch => {
         const tripBody = {
-            name: tripData.name,
-            category: tripData.category,
-            duration: tripData.duration,
-            user_id: tripData.userId
+            trip: {
+                name: tripData.name,
+                category: tripData.category,
+                duration: tripData.duration,
+                user_id: tripData.userId
+            }
         }
         return fetch("http://localhost:3001/api/v1/trips", {
             credentials: "include",
