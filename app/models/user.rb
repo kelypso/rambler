@@ -5,4 +5,5 @@ class User < ApplicationRecord
     has_many :entries, through: :trips
 
     validates :name, :email, :username, presence: true
+    validates :email, :username, uniqueness: true
 end
