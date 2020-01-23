@@ -23,7 +23,7 @@ class Api::V1::TripsController < ApplicationController
     def create
         @trip = Trip.new(trip_params)
         if @trip.save 
-            render json: @trip, status: :created
+            render json: TripSerializer.new(@trip), status: :created
         else
             resp = {
                 error: @trip.errors.full_messages.to_sentence
