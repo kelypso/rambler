@@ -9,7 +9,8 @@ import Signup from './components/Signup.js'
 import Trips from './components/Trips.js'
 import TripForm from './components/TripForm.js'
 import TripCard from './components/TripCard.js' // Update with trip page???
-//import NewTripForm from './components/TripForm.js'
+import NewTripFormContainer from './components/NewTripFormContainer.js'
+import EditTripFormContainer from './components/EditTripFormContainer.js'
 import {Route, Switch, withRouter} from 'react-router-dom'
 
 class App extends React.Component {
@@ -19,7 +20,7 @@ class App extends React.Component {
   }
   
   render() {
-    const {loggedIn, trips} = this.props
+    const {loggedIn, trips, setEditTripForm} = this.props
     return (
       <div className="App">
         {loggedIn ? <NavBar /> : <Home />}
@@ -28,7 +29,7 @@ class App extends React.Component {
           <Route exact path='/login' component={Login} />
           <Route exact path='/signup' component={Signup} />
           <Route exact path='/trips' component={Trips} />
-          <Route exact path='/trips/new' component={TripForm} />
+          <Route exact path='/trips/new' component={NewTripFormContainer} />
           <Route exact path='/trips/:id' render={props => { // Update with trip page???
               const trip = trips.find(t => t.id === props.match.params.id)
               return <TripCard trip={trip} {...props} />
@@ -36,7 +37,7 @@ class App extends React.Component {
           } />
           <Route exact path='/trips/:id/edit' render={props => {
               const trip = trips.find(t => t.id === props.match.params.id)
-              return <TripForm trip={trip} {...props} /> // NewTripForm
+              return <EditTripFormContainer trip={trip} {...props} />
             }
           } />
         </Switch>
