@@ -11,3 +11,15 @@ export const resetTripForm = () => {
         type: "RESET_TRIP_FORM"
     }
 }
+
+export const setEditTripForm = trip => {
+    const formData = {
+        name: trip.attributes.name,
+        category: trip.attributes.category,
+        duration: trip.attributes.duration
+    }
+    return {
+        type: "SET_EDIT_TRIP_FORM",
+        formData
+    }
+}

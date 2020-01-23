@@ -13,6 +13,8 @@ export default (state=initialState, action) => {
             }
         case "RESET_TRIP_FORM":
             return initialState
+        case "SET_EDIT_TRIP_FORM":
+            return action.formData
         default: 
             return state
     }
