@@ -8,7 +8,7 @@ import Login from './components/Login.js';
 import Signup from './components/Signup.js';
 import Trips from './components/Trips.js';
 import MainContainer from './components/MainContainer.js';
-import {BrowserRouter as Router, Route, Switch} from 'react-router-dom';
+import {BrowserRouter as Router, Route} from 'react-router-dom';
 
 class App extends React.Component {
   
@@ -24,11 +24,9 @@ class App extends React.Component {
           <NavBar />
           <MainContainer />
           <Route exact path='/' render={() => loggedIn? <Trips /> : <Home />} />
-          <Switch>
-            <Route exact path='/login' component={Login} />
-            <Route exact path='/signup' component={Signup} />
-            <Route exact path='/trips' component={Trips} />
-          </Switch>
+          <Route exact path='/login' component={Login} />
+          <Route exact path='/signup' component={Signup} />
+          <Route exact path='/trips' component={Trips} />
         </div>
       </Router>
     );
