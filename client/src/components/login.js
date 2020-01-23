@@ -3,7 +3,7 @@ import {connect} from 'react-redux'
 import {updateLoginForm} from '../actions/loginForm.js'
 import {login} from '../actions/user.js'
 
-const Login = ({loginData, updateLoginForm, login}) => {
+const Login = ({loginData, updateLoginForm, login, history}) => {
 
     const handleChange = e => {
         const {name, value} = e.target
@@ -16,7 +16,7 @@ const Login = ({loginData, updateLoginForm, login}) => {
 
     const handleSubmit = e => {
         e.preventDefault()
-        login(loginData)
+        login(loginData, history)
     }
 
     return (
