@@ -3,7 +3,7 @@ import {connect} from 'react-redux'
 import {updateNewTripForm} from '../actions/newTripForm.js'
 import {createTrip} from '../actions/trips.js'
 
-const NewTrip = ({tripData, userId, updateNewTripForm, createTrip, history}) => {
+const NewTrip = ({tripData, userId, updateNewTripForm, createTrip}) => {
     const {name, category, duration} = tripData
 
     const handleChange = e => {
