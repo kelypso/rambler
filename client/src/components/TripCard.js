@@ -8,7 +8,7 @@ const TripCard = ({trip}) => {
                 <p>{trip.attributes.category}</p>
                 <p>{trip.attributes.duration}</p>
             </div> :
-        <p>Trip card with no trip :(</p>
+        <p>No trips added yet!</p>
     )
 }
 
