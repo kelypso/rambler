@@ -21,6 +21,13 @@ export const addTrip = trip => {
     }
 }
 
+export const updateTripStore = trip => {
+    return {
+        type: "UPDATE_TRIP",
+        trip
+    }
+}
+
 // Asynch action creators
 export const getUserTrips = () => {
     return dispatch => {
@@ -67,6 +74,38 @@ export const createTrip = (tripData, history) => {
                     alert(response.error)
                 } else {
                     dispatch(addTrip(response.data))
+                    dispatch(resetTripForm())
+                    history.push(`/trips/${response.data.id}`)
+                }
+            })
+            .catch(console.log)
+    }
+}
+
+export const updateTrip = (tripData, history) => {
+    return dispatch => {
+        const tripBody = {
+            trip: {
+                name: tripData.name,
+                category: tripData.category,
+                duration: tripData.duration,
+                user_id: tripData.userId
+            }
+        }
+        return fetch(`http://localhost:3001/api/v1/trips/${tripData.tripId}`, {
+            credentials: "include",
+            method: "PATCH",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify(tripBody)
+        })
+            .then(resp => resp.json())
+            .then(response => {
+                if (response.error) {
+                    alert(response.error)
+                } else {
+                    dispatch(updateTripStore(response.data))
                     dispatch(resetTripForm())
                     history.push(`/trips/${response.data.id}`)
                 }

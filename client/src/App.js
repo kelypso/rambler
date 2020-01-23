@@ -7,7 +7,6 @@ import Home from './components/Home.js'
 import Login from './components/Login.js'
 import Signup from './components/Signup.js'
 import Trips from './components/Trips.js'
-import TripForm from './components/TripForm.js'
 import TripCard from './components/TripCard.js' // Update with trip page???
 import NewTripFormContainer from './components/NewTripFormContainer.js'
 import EditTripFormContainer from './components/EditTripFormContainer.js'

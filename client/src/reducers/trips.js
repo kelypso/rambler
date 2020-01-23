@@ -8,6 +8,9 @@ export default (state=initialState, action) => {
             return state.concat(action.trip)
         case "CLEAR_TRIPS":
             return initialState
+        case "UPDATE_TRIP":
+            console.log("UPDATE trip action is:", action)
+            return state
         default:
             return state
     }
