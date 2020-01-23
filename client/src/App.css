@@ -61,16 +61,17 @@ a.active {
 .navLinks {
   display: flex;
   flex-direction: row;
+  justify-content: space-between;
   padding: 10px;
   color: #636363;
   height: 22px;
   background: lightgrey;
 }
 
-.logout {
+/* .logout {
   position: relative;
   left: 300px;
-}
+} */
 
 .TripCard {
   float: left;

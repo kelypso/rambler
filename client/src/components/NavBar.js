@@ -7,8 +7,8 @@ const NavBar = ({user, loggedIn}) => {
     return (
         <div className="NavBar">
             <span className="navLinks">
-                <NavLink exact activeClassName="active" to="/trips">  |  Trips  |  </NavLink>
-                <NavLink exact activeClassName="active" to="/trips/new">New Trip  |  </NavLink>
+                <NavLink exact activeClassName="active" to="/trips">Trips</NavLink>
+                <NavLink exact activeClassName="active" to="/trips/new">New Trip</NavLink>
                 <span className="logout"><Logout /></span>
             </span>
             <br/ >
