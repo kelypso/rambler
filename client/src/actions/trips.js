@@ -1,4 +1,4 @@
-import {resetTripForm} from './newTripForm'
+import {resetNewTripForm} from './newTripForm.js'
 
 // Synchronous action creators 
 export const setUserTrips = trips => {
@@ -67,7 +67,7 @@ export const createTrip = (tripData, history) => {
                     alert(response.error)
                 } else {
                     dispatch(addTrip(response.data))
-                    dispatch(resetTripForm())
+                    dispatch(resetNewTripForm())
                     history.push(`/trips/${response.data.id}`)
                 }
             })
