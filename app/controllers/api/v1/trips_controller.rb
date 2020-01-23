@@ -21,7 +21,7 @@ class Api::V1::TripsController < ApplicationController
 
     #POST /trips 
     def create
-        #byebug
+        byebug
         @trip = Trip.new(trip_params)
         if @trip.save 
             render json: @trip, status: :created
@@ -41,7 +41,7 @@ class Api::V1::TripsController < ApplicationController
 
     # Only allow a trusted parameter "white list" through.
     def trip_params
-        params.require(:trip).permit(:name, :category, :duration)
+        params.require(:trip).permit(:name, :category, :duration, :user_id)
     end
 
 end
