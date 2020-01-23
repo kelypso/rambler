@@ -8,7 +8,6 @@ import Login from './components/Login.js'
 import Logout from './components/Logout.js'
 import Signup from './components/Signup.js'
 import Trips from './components/Trips.js'
-import MainContainer from './components/MainContainer.js'
 import {BrowserRouter as Router, Route} from 'react-router-dom'
 
 class App extends React.Component {
@@ -24,7 +23,6 @@ class App extends React.Component {
         <div className="App">
           {loggedIn ? <Logout /> : null}
           <NavBar />
-          <MainContainer />
           <Route exact path='/' render={() => loggedIn? <Trips /> : <Home />} />
           <Route exact path='/login' component={Login} />
           <Route exact path='/signup' component={Signup} />
