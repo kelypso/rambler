@@ -35,7 +35,7 @@ export const login = (credentials, history)=> {
                 dispatch(setCurrentUser(response.data))
                 dispatch(getUserTrips())
                 dispatch(resetLoginForm())
-                history.push("/")
+                history.push("/trips")
             }
         })
         .catch(console.log)
