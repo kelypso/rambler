@@ -133,10 +133,10 @@ export const deleteTrip = (tripId, history) => {
                 if (response.error) {
                     alert(response.error)
                 } else {
-                    dispatch(deleteTripStore(response.data))
-                    history.push("/trips")
-                }
-            })
+                dispatch(deleteTripStore(tripId))
+                history.push("/trips")
+            }
+        })
             .catch(console.log)
-    }
+    }   
 }

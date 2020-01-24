@@ -11,7 +11,7 @@ export default (state=initialState, action) => {
         case "UPDATE_TRIP":
             return state.map(t => t.id === action.trip.id ? action.trip : t)
         case "DELETE_TRIP":
-            return state
+            return state.filter(t => t.id === action.tripId ? false : true)
         default:
             return state
     }
