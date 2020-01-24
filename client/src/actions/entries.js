@@ -38,7 +38,7 @@ export const deleteTripStore = tripId => {
 // Asynch action creators
 export const getUserEntries = () => {
     return dispatch => {
-        return fetch("http://localhost:3001/api/v1/trips", {
+        return fetch("http://localhost:3001/api/v1/entries", {
         credentials: "include",
         method: "GET",
         headers: {
@@ -50,7 +50,7 @@ export const getUserEntries = () => {
             if (response.error) {
                 alert(response.error)
             } else {
-                dispatch(setUserTrips(response.data))
+                dispatch(setUserEntries(response.data))
             }
         })
         .catch(console.log)
