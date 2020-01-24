@@ -1,6 +1,6 @@
 import React from 'react'
 import TripForm from './TripForm.js'
-import {updateTrip} from '../actions/trips.js'
+import {updateTrip, deleteTrip} from '../actions/trips.js'
 import {setEditTripForm, resetTripForm} from '../actions/tripForm.js'
 import {connect} from 'react-redux'
 
@@ -27,16 +27,17 @@ class EditTripFormContainer extends React.Component {
     }
     
     render() {
-        const {history} = this.props
+        const {trip, deleteTrip, history} = this.props
+        const tripId = trip ? trip.id : null
         return (
             <div className="EditTripFormContainer">
                 <TripForm editMode handleSubmit={this.handleSubmit} />
                 <br/>
-                <button style={{color: "maroon"}} onClick={this.deleteTrip}>Delete Trip</button> 
+                <button style={{color: "maroon"}} onClick={() => deleteTrip(tripId, history)}>Delete Trip</button> 
                 {/* Move button to trip show page??? */}
             </div>
         )
     }
 }
 
-export default connect(null, {updateTrip, setEditTripForm, resetTripForm})(EditTripFormContainer)
+export default connect(null, {updateTrip, deleteTrip, setEditTripForm, resetTripForm})(EditTripFormContainer)
