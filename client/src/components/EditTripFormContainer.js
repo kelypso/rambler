@@ -1,7 +1,7 @@
 import React from 'react'
 import TripForm from './TripForm.js'
-import {updateTrip, deleteTrip} from '../actions/trips.js'
-import {setEditTripForm, resetTripForm} from '../actions/tripForm.js'
+import {updateTrip} from '../actions/trips.js'
+import {setEditTripForm} from '../actions/tripForm.js'
 import {connect} from 'react-redux'
 
 class EditTripFormContainer extends React.Component {
@@ -10,8 +10,8 @@ class EditTripFormContainer extends React.Component {
         this.props.trip && this.props.setEditTripForm(this.props.trip)
     }
 
-    handleSubmit = (tripData, userId, history) => {
-        const {updateTrip, trip} = this.props
+    handleSubmit = (tripData, userId) => {
+        const {updateTrip, trip, history} = this.props
         updateTrip({
             ...tripData, 
             userId,
@@ -23,7 +23,7 @@ class EditTripFormContainer extends React.Component {
         const {handleSubmit, history} = this.props
         return (
             <div className="EditTripFormContainer">
-                <TripForm editMode handleSubmit={handleSubmit} history={history} />
+                <TripForm editMode handleSubmit={this.handleSubmit} />
             </div>
         )
     }

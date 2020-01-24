@@ -2,7 +2,7 @@ import React from 'react'
 import {connect} from 'react-redux'
 import {updateTripForm} from '../actions/tripForm.js'
 
-const TripForm = ({tripData, userId, updateTripForm, handleSubmit, history, editMode}) => {
+const TripForm = ({tripData, userId, updateTripForm, handleSubmit, editMode}) => {
     const {name, category, duration} = tripData
 
     const handleChange = e => {
@@ -14,7 +14,7 @@ const TripForm = ({tripData, userId, updateTripForm, handleSubmit, history, edit
         <div className="TripForm">
             <form onSubmit={e => {
                 e.preventDefault()
-                handleSubmit(tripData, userId, history)
+                handleSubmit(tripData, userId)
             }}>
                 <input type="text" name="name" onChange={handleChange} value={name} placeholder="name" /><br />
                 <input type="text" name="category" onChange={handleChange} value={category} placeholder="category" /><br />
