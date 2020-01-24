@@ -31,9 +31,9 @@ class EditTripFormContainer extends React.Component {
         const tripId = trip ? trip.id : null
         return (
             <div className="EditTripFormContainer">
-                <TripForm editMode handleSubmit={this.handleSubmit} />
-                <br/>
-                <button onClick={() => deleteTrip(tripId, history)} className="formBtn">Delete Trip</button> 
+                <br/><br/><TripForm editMode handleSubmit={this.handleSubmit} /><br/>
+                <button onClick={() => deleteTrip(tripId, history)} className="formBtn">Delete Trip</button>
+                <p className="caution">*Deleting a trip will remove all associated entries*</p> 
                 {/* Move button to trip show page??? */}
             </div>
         )

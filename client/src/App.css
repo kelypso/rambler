@@ -21,6 +21,13 @@ h2 {
   color: #636363;
 }
 
+.caution {
+  color: #636363;
+  font-size: 10px;
+  font-style: italic;
+  line-height: 5px;
+}
+
 a.active {
   color: teal;
 }

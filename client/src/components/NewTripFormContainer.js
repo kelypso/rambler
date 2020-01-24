@@ -14,7 +14,7 @@ const NewTripFormContainer = ({createTrip, history}) => {
     
     return (
         <div className="NewTripFormContainer">
-            <TripForm handleSubmit={handleSubmit} history={history} />
+            <br/><br/><TripForm handleSubmit={handleSubmit} history={history} /><br/>
         </div>
     )
 }
