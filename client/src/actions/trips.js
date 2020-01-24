@@ -88,8 +88,7 @@ export const updateTrip = (tripData, history) => {
             trip: {
                 name: tripData.name,
                 category: tripData.category,
-                duration: tripData.duration,
-                user_id: tripData.userId
+                duration: tripData.duration
             }
         }
         return fetch(`http://localhost:3001/api/v1/trips/${tripData.tripId}`, {

@@ -14,7 +14,7 @@ const TripForm = ({tripData, userId, updateTripForm, handleSubmit, editMode}) =>
         <div className="TripForm">
             <form onSubmit={e => {
                 e.preventDefault()
-                handleSubmit(tripData, userId)
+                handleSubmit(tripData)
             }}>
                 <input type="text" name="name" onChange={handleChange} value={name} placeholder="name" /><br />
                 <input type="text" name="category" onChange={handleChange} value={category} placeholder="category" /><br />

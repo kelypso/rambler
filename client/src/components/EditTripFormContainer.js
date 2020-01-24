@@ -18,11 +18,10 @@ class EditTripFormContainer extends React.Component {
         this.props.resetTripForm()
     }
 
-    handleSubmit = (tripData, userId) => {
+    handleSubmit = (tripData) => {
         const {updateTrip, trip, history} = this.props
         updateTrip({
             ...tripData, 
-            userId,
             tripId: trip.id
         }, history)
     }

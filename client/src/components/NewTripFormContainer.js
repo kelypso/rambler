@@ -5,7 +5,7 @@ import {connect} from 'react-redux'
 
 const NewTripFormContainer = ({createTrip, history}) => {
 
-    const handleSubmit = (tripData, userId, history) => {
+    const handleSubmit = (tripData, userId) => {
         createTrip({
             ...tripData, 
             userId
