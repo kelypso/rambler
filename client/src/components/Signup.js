@@ -21,7 +21,7 @@ const Signup = ({signupData, updateSignupForm, signup, history}) => {
             <input type="text" name="name" onChange={handleChange} value={name} placeholder="name" /><br />
             <input type="text" name="email" onChange={handleChange} value={email} placeholder="email" /><br />
             <input type="text" name="username" onChange={handleChange} value={username} placeholder="username" /><br />
-            <input type="text" name="password" onChange={handleChange} value={password} placeholder="password" /><br />
+            <input type="password" name="password" onChange={handleChange} value={password} placeholder="password" /><br />
             <input type="submit" value="Sign Up" />
         </form>
     )
