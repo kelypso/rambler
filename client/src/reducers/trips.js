@@ -9,8 +9,7 @@ export default (state=initialState, action) => {
         case "CLEAR_TRIPS":
             return initialState
         case "UPDATE_TRIP":
-            console.log("UPDATE trip action is:", action)
-            return state
+            return state.map(t => t.id === action.trip.id ? action.trip : t)
         default:
             return state
     }
