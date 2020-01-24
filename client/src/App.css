@@ -2,17 +2,6 @@
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
 .App-header {
   background-color: #282c34;
   min-height: 100vh;
@@ -24,31 +13,9 @@
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
+body {
+  background: #fcfcfcda;
 }
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
-
-/* body {
-  background: #fcf4e8;
-} */
-
-/* .NavBar {
-  display: flex;
-  flex-direction: row;
-  padding: 10px;
-  color: #636363;
-  height: 22px;
-  background: lightgrey;
-} */
 
 h2 {
   color: #636363;
@@ -58,29 +25,76 @@ a.active {
   color: teal;
 }
 
+.nav {
+  text-decoration: none;
+  font-size: 16px;
+  font-weight: bold;
+  width: 100px;
+  height: 10px;
+  padding: 5px 0px 15px 0px;
+  border: solid 2px #636363;
+  border-radius: 4px;
+  background: #ffffff;
+}
+
 .navLinks {
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
+  justify-content: space-around;
   padding: 10px;
   color: #636363;
-  height: 22px;
+  height: 32px;
   background: lightgrey;
 }
 
-/* .logout {
-  position: relative;
-  left: 300px;
-} */
+.userLink {
+  position: absolute;
+  right: 10px;
+  bottom: 10px;
+}
+
+.formBtn {
+  text-decoration: none;
+  font-size: 16px;
+  font-weight: bold;
+  width: 100px;
+  height: 10px;
+  padding: 5px 0px 25px 0px;
+  border: solid 2px #636363;
+  border-radius: 4px;
+  color: #551A8B;
+  cursor: pointer;
+  background: #ffffff;
+}
 
 .TripCard {
   float: left;
-  width: 200px;
-  height: 160px;
-  margin: 5px;
+  width: 450px;
+  height: 150px;
+  margin: 10px;
   border-radius: 8px;
-  border: solid 3px #636363;
+  border: solid 5px #636363;
   position: relative;
-  top: 40px;
+  top: 30px;
+  left: 50px;
   color: #636363;
+}
+
+.tripName {
+  float: left;
+  margin-left: 40px;
+}
+
+.tripCategory {
+  position: absolute;
+  margin-top: 40px;
+  margin-left: 45px;
+}
+
+.tripDuration {
+  position: absolute;
+  margin-top: 70px;
+  margin-left: 45px;
+  font-size: 14px;
+  font-weight: bold;
 }

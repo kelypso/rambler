@@ -16,10 +16,10 @@ const TripForm = ({tripData, userId, updateTripForm, handleSubmit, editMode}) =>
                 e.preventDefault()
                 handleSubmit(tripData)
             }}>
-                <input type="text" name="name" onChange={handleChange} value={name} placeholder="name" /><br />
-                <input type="text" name="category" onChange={handleChange} value={category} placeholder="category" /><br />
-                <input type="text" name="duration" onChange={handleChange} value={duration} placeholder="start date - end date" /><br />
-            <input type="submit" value={editMode ? "Edit Trip" : "Add Trip"} />
+            <input type="text" name="name" onChange={handleChange} value={name} placeholder="name" /><br />
+            <input type="text" name="category" onChange={handleChange} value={category} placeholder="category" /><br />
+            <input type="text" name="duration" onChange={handleChange} value={duration} placeholder="start date - end date" /><br />
+            <br/><input type="submit" value={editMode ? "Edit Trip" : "Add Trip"} className="formBtn" />
         </form>
         </div>
     )

@@ -33,7 +33,7 @@ class EditTripFormContainer extends React.Component {
             <div className="EditTripFormContainer">
                 <TripForm editMode handleSubmit={this.handleSubmit} />
                 <br/>
-                <button style={{color: "maroon"}} onClick={() => deleteTrip(tripId, history)}>Delete Trip</button> 
+                <button onClick={() => deleteTrip(tripId, history)} className="formBtn">Delete Trip</button> 
                 {/* Move button to trip show page??? */}
             </div>
         )
