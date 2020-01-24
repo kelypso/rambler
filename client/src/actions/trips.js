@@ -28,6 +28,13 @@ export const updateTripStore = trip => {
     }
 }
 
+export const deleteTripStore = tripId => {
+    return {
+        type: "DELETE_TRIP",
+        tripId
+    }
+}
+
 // Asynch action creators
 export const getUserTrips = () => {
     return dispatch => {
@@ -106,6 +113,28 @@ export const updateTrip = (tripData, history) => {
                 } else {
                     dispatch(updateTripStore(response.data))
                     history.push(`/trips/${response.data.id}`)
+                }
+            })
+            .catch(console.log)
+    }
+}
+
+export const deleteTrip = (tripId, history) => {
+    return dispatch => {
+        return fetch(`http://localhost:3001/api/v1/trips/${tripId}`, {
+            credentials: "include",
+            method: "DELETE",
+            headers: {
+                "Content-Type": "application/json"
+            }
+        })
+            .then(resp => resp.json())
+            .then(response => {
+                if (response.error) {
+                    alert(response.error)
+                } else {
+                    dispatch(deleteTripStore(response.data))
+                    history.push("/trips")
                 }
             })
             .catch(console.log)
