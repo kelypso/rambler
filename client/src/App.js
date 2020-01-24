@@ -19,7 +19,7 @@ class App extends React.Component {
   }
   
   render() {
-    const {loggedIn, trips, setEditTripForm} = this.props
+    const {loggedIn, trips} = this.props
     return (
       <div className="App">
         {loggedIn ? <NavBar /> : <Home />}
