@@ -47,7 +47,7 @@ class Api::V1::TripsController < ApplicationController
   # DELETE /trips/1
     def destroy
         if @trip.destroy
-            render json:  {data: "Trip successfully destroyed"}, status: :ok
+            render json:  {message: "Trip successfully destroyed"}, status: :ok
         else
             resp = {
                 error: "Trip not found and not destroyed"
