@@ -1,6 +1,6 @@
 import React from 'react'
 import {connect} from 'react-redux'
-import TripCard from './TripCard.js'
+import TripCard from './presentational/TripCard.js'
 
 const Trips = ({trips}) => {
     const tripCards = trips.length > 0 ? trips.map(t => <TripCard trip={t} key={t.id} />) : null
