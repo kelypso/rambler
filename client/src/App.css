@@ -50,7 +50,7 @@ a.active {
 
 .userLink {
   position: absolute;
-  right: 10px;
+  left: 335px;
   bottom: 10px;
 }
 
@@ -93,6 +93,12 @@ a.active {
   color: #636363;
   font-style: italic;
 }
+
+/* .userWelcome { FIX OR REMOVE!!!
+  position: sticky;
+  left: 250px;
+  bottom: 1000px;
+} */
 
 .TripCard {
   float: left;
