@@ -5,8 +5,8 @@ const TripShow = ({trip}) => {
         trip ?
             <div className="TripShow">
                 <h2>{trip.attributes.name}</h2>
-                <p className="tripCategory">{trip.attributes.category}</p>
-                <p className="tripDuration">{trip.attributes.duration}</p>
+                <p className="showDuration">{trip.attributes.duration}</p>
+                <p className="showCategory">{trip.attributes.category}</p>
             </div> :
         <p>Trip could not be found</p>
     )

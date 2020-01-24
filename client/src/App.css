@@ -2,7 +2,7 @@
   text-align: center;
 }
 
-.App-header {
+/* .App-header {
   background-color: #282c34;
   min-height: 100vh;
   display: flex;
@@ -11,7 +11,7 @@
   justify-content: center;
   font-size: calc(10px + 2vmin);
   color: white;
-}
+} */
 
 body {
   background: #fcfcfcda;
@@ -139,4 +139,25 @@ a.active {
   margin-left: 45px;
   font-size: 14px;
   font-weight: bold;
+}
+
+.TripShow {
+  border-radius: 8px;
+  width: 650px;
+  margin: auto;
+  padding: 2px 0px 20px 0px;
+  background: lightgrey;
+}
+
+.showCategory {
+  font-size: 14px;
+  font-weight: bold;
+  color: #636363;
+  
+}
+
+.showDuration {
+  font-size: 14px;
+  font-weight: bold;
+  color: #636363;
 }
