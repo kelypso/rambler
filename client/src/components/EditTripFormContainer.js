@@ -20,7 +20,7 @@ class EditTripFormContainer extends React.Component {
     }
     
     render() {
-        const {handleSubmit, history} = this.props
+        const {history} = this.props
         return (
             <div className="EditTripFormContainer">
                 <TripForm editMode handleSubmit={this.handleSubmit} />
