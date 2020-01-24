@@ -26,6 +26,7 @@ a.active {
 }
 
 .nav {
+  left: 20px;
   text-decoration: none;
   font-size: 16px;
   font-weight: bold;
@@ -67,6 +68,32 @@ a.active {
   background: #ffffff;
 }
 
+.formInput {
+  font-size: 16px;
+  height: 25px;
+  width: 250px;
+}
+
+.firstNav {
+  position: absolute;
+  left: 15px;
+}
+
+.secondNav {
+  position: absolute;
+  left: 130px;
+}
+
+.logout {
+  position: absolute;
+  right: 15px;
+}
+
+.tagline {
+  color: #636363;
+  font-style: italic;
+}
+
 .TripCard {
   float: left;
   width: 450px;
@@ -83,6 +110,8 @@ a.active {
 .tripName {
   float: left;
   margin-left: 40px;
+  text-decoration: none;
+  color: teal;
 }
 
 .tripCategory {
