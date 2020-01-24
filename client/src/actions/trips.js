@@ -106,7 +106,6 @@ export const updateTrip = (tripData, history) => {
                     alert(response.error)
                 } else {
                     dispatch(updateTripStore(response.data))
-                    dispatch(resetTripForm())
                     history.push(`/trips/${response.data.id}`)
                 }
             })
