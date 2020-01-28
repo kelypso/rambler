@@ -19,6 +19,33 @@ class Api::V1::EntriesController < ApplicationController
         render json: entry_json
     end
 
+    #POST /entries 
+    def create
+        @entry = current_user.entries.build(entry_params)
+        if @entry.save 
+            render json: EntrySerializer.new(@entry), status: :created
+        else
+            resp = {
+                error: @entry.errors.full_messages.to_sentence
+            }
+            render json: resp, status: :unprocessable_entity
+        end
+    end
+
+    # PATCH/PUT /entries/1
+    def update
+        if @entry.update(entry_params)
+            render json:  EntrySerializer.new(@entry), status: :ok
+        else
+            resp = {
+                error: @entry.errors.full_messages.to_sentence
+            }
+            render json: resp, status: :unprocessable_entity
+        end
+    end
+
+    
+
     private
     # Use callbacks to share common setup or constraints between actions.
     def set_entry
