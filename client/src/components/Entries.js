@@ -9,9 +9,9 @@ const Entries = ({entries}) => {
     )
 }
 
-const mapStateToProps = ({entries}) => {
+const mapStateToProps = ({state}) => {
     return {
-      entries
+      entries = state.trips.attributes.entries
     }
 }
 
