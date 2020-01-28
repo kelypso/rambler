@@ -10,6 +10,7 @@ import Trips from './components/Trips.js'
 import TripShow from './components/presentational/TripShow.js'
 import NewTripFormContainer from './components/NewTripFormContainer.js'
 import EditTripFormContainer from './components/EditTripFormContainer.js'
+import Entries from './components/Entries.js'
 import {Route, Switch, withRouter} from 'react-router-dom'
 
 class App extends React.Component {
@@ -38,6 +39,7 @@ class App extends React.Component {
               return <EditTripFormContainer trip={trip} {...props} />
             }
           } />
+          <Route exact path='/entries' component={Entries} />
         </Switch>
       </div>
     );
