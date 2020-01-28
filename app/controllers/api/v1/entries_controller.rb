@@ -44,7 +44,18 @@ class Api::V1::EntriesController < ApplicationController
         end
     end
 
-    
+    # DELETE /entries/1
+    def destroy
+        if @entry.destroy
+            render json:  {message: "Entry successfully destroyed"}, status: :ok
+        else
+            resp = {
+                error: "Entry not found and not destroyed"
+            }
+            render json: resp, status: :unprocessable_entity
+        end
+    end
+
 
     private
     # Use callbacks to share common setup or constraints between actions.
